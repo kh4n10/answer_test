@@ -9,7 +9,7 @@ When(/^I click the send query button whilst the form is empty$/) do
 end
 
 Then(/^I am told which fields I have to populate$/) do
-	expect(@answer_site.contact_us_page.error_list_appears.visible?).to be true
+	expect(@answer_site.contact_us_page.required_fields_list.visible?).to be true
 	expect(page).to have_css('li', :text => 'Fullname is required')
 	expect(page).to have_css('li', :text => 'Email is required')
 	expect(page).to have_css('li', :text => 'Contact is required')
@@ -30,11 +30,11 @@ end
 
 And(/^Click on the send query button$/) do
 	@answer_site.contact_us_page.click_on_send_query
-	expect(@answer_site.contact_us_page.error_list_appears.visible?).to be true
-	# expect(@answer_site.contact_us_page.error_list_appears.visible?).to be false
 end
 
 Then(/^I get the error messages for the remaining fields which are required to be populated$/) do
+	expect(@answer_site.contact_us_page.required_fields_list.visible?).to be true
+	# expect(@answer_site.contact_us_page.required_fields_list.visible?).to be false
 	expect(@answer_site.contact_us_page.contact_required.text).to eql 'Contact is required'
 	# expect(@answer_site.contact_us_page.contact_required.text).to eql 'Email is required'
 	expect(@answer_site.contact_us_page.contact_invalid.text).to eql 'Chosen contact is Invalid'

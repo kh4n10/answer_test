@@ -6,7 +6,7 @@ class Pages::ContactUsPage < SitePrism::Page
 		click_button 'Send query'
 	end
 
-	def error_list_appears
+	def required_fields_list
 		error_list
 	end
 
