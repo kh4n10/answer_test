@@ -3,6 +3,7 @@ require 'cucumber'
 require 'site_prism'
 require 'active_support'
 require 'selenium-webdriver'
+require 'rspec'
 
 ActiveSupport::Dependencies.autoload_paths << File.join(Dir.pwd, 'lib')
 ActiveSupport::Dependencies.autoload_paths << File.join(Dir.pwd, 'lib/pages')
