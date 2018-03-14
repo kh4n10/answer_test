@@ -1,14 +1,13 @@
 class Pages::WhoAreWePage < SitePrism::Page
 
 	element :values, ".core-row"
-	
 	# cant use the xpath for the div which video is in as each time a session is created it generates a unique xpath
 	# element :atmosphere_video, :xpath, '//*[@id="player_uid_681501320_1"]/div[4]/div'
 	# //*[@id="player_uid_55317468_1"]/div[4]/div
 
 	# the div image for the video can not be found due to the classes being all the same
-	element :video, "#player_uid_665230744_1"
-
+	element :video, "#answerDigitalVideo"
+	# element :video_playing, ".ytp-cued-thumbnail-overlay-image"
 	# cant use the xpath for the button on the video as each time a session is created it generates a unique xpath
 	# element :atmosphere_video, :xpath, '//*[@id="player_uid_807623343_1"]/div[4]/button'
 	# //*[@id="player_uid_366861057_1"]/div[4]/button
@@ -50,13 +49,13 @@ class Pages::WhoAreWePage < SitePrism::Page
 	end
 
 	def atmosphere_video
-		click_on video
-		# page.execute_script("$('.ytp-cued-thumbnail-overlay-image').click()")
-		# click_on video
-
-
-		# click_on ".ytp-large-play-button-bg"
-
+		# page.execute_script("$('#answerDigitalVideo')")
+		video
 	end
 
+	# def video_is_playing
+	# 	first('.ytp-cued-thumbnail-overlay-image')
+	# 	video_playing
+	# 	page.find('.ytp-time-duration', :text => "6:00")
+	# end
 end

@@ -26,9 +26,10 @@ end
 
 And(/^Click the play button$/) do
 	@answer_site.who_are_we_page.atmosphere_video.click
-	sleep 5
 end
 
 Then(/^The video is playing$/) do
-
+	sleep 5
+	expect(page).not_to have_selector('.ytp-cued-thumbnail-overlay-image')
+	# not sure if this test is robust enough, as there are 2 other thumbnail images with the exact same class name
 end
