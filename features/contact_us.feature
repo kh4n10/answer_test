@@ -14,14 +14,14 @@ Feature: On the contact form page, I can fill out the form and send my query
 
 		Given I am on the contact us page
 		When I fill the name field
-		And Email field
+		And I fill the email field
 		And Click on the send query button
 		Then I get the error messages for the remaining fields which are required to be populated
 
 	Scenario: Fill out name , email and message but do not select who is the query for and assert error message
 		Given I am on the contact us page
 		When I fill the name field
-		And Email field
+		And I fill the email field
 		And Write a message
 		And Click on the send query button
 		Then I get the error messages for the remaining fields which are required to be populated

@@ -20,7 +20,7 @@ When(/^I fill the name field$/) do
 	@answer_site.contact_us_page.enter_full_name
 end
 
-And(/^Email field$/) do
+And(/^I fill the email field$/) do
 	@answer_site.contact_us_page.enter_email
 end
 
